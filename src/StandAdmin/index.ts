@@ -5,3 +5,5 @@ export * from './StandRecordsHoc';
 export * from './standModelHelper';
 
 export { BatchCheckHoc, ActionCounterHoc };
+
+export * from './interface';
