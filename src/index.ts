@@ -10,16 +10,24 @@ import {
   IConfigLoadingHocParams,
 } from 'stand-admin-base';
 
+function getHistory() {
+  return history;
+}
+
+function getConnect() {
+  return connect;
+}
+
 const StandRecordsHoc = (params: IRecordsHocParams) => {
-  return OrigStandRecordsHoc({ getDvaApp, history, connect, ...params });
+  return OrigStandRecordsHoc({ getDvaApp, getHistory, getConnect, ...params });
 };
 
 const StandListCtrlHoc = (params: IListCtrlHocParams<any>) => {
-  return OrigStandListCtrlHoc({ getDvaApp, history, connect, ...params });
+  return OrigStandListCtrlHoc({ getDvaApp, getHistory, getConnect, ...params });
 };
 
 const StandConfigLoadingHoc = (params: IConfigLoadingHocParams) => {
-  return OrigStandConfigLoadingHoc({ connect, ...params });
+  return OrigStandConfigLoadingHoc({ getConnect, ...params });
 };
 
 export * from 'stand-admin-base';
