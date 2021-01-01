@@ -25,8 +25,11 @@ dva: {
 
 3. Do the admin work
    - [Entry](https://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/StandAdminDemo/main.js)
-     _ StandRecordsHoc
-     _ StandListCtrlHoc
-   - [SearchForm](https://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/StandAdminDemo/SearchForm/index.js) \* useStandSearchForm
-   - [UpsertForm](https://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/StandAdminDemo/RecordForm/index.js) \* useStandUpsertForm
-   - [List](https://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/StandAdminDemo/List/index.js) \* useStandTableList
+     - StandRecordsHoc
+     - StandListCtrlHoc
+   - [SearchForm](https://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/StandAdminDemo/SearchForm/index.js)
+     - useStandSearchForm
+   - [UpsertForm](https://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/StandAdminDemo/RecordForm/index.js)
+     - useStandUpsertForm
+   - [List](https://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/StandAdminDemo/List/index.js)
+     - useStandTableList
