@@ -5,6 +5,7 @@ import {
   StandRecordsHoc as OrigStandRecordsHoc,
   StandListCtrlHoc as OrigStandListCtrlHoc,
   StandConfigLoadingHoc as OrigStandConfigLoadingHoc,
+  StandConnectHoc as OrigStandConnectHoc,
   IRecordsHocParams,
   IListCtrlHocParams,
   IConfigLoadingHocParams,
@@ -30,5 +31,15 @@ const StandConfigLoadingHoc = (params: IConfigLoadingHocParams) => {
   return OrigStandConfigLoadingHoc({ getConnect, ...params });
 };
 
+const StandConnectHoc = (params: IConfigLoadingHocParams) => {
+  return OrigStandConnectHoc({ getConnect, ...params });
+};
+
 export * from 'stand-admin-base';
-export { StandRecordsHoc, StandListCtrlHoc, StandConfigLoadingHoc };
+
+export {
+  StandRecordsHoc,
+  StandListCtrlHoc,
+  StandConfigLoadingHoc,
+  StandConnectHoc,
+};
