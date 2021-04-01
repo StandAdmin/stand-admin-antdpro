@@ -10,7 +10,9 @@ setConfig({
   getConnect: () => {
     return connect;
   },
-  getDvaApp,
+  getDvaApp: () => {
+    return getDvaApp();
+  },
 });
 
 export * from 'stand-admin-base';
