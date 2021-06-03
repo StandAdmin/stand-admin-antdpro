@@ -33,7 +33,8 @@
   },
   "peerDependencies": {
     "antd": "^4.9.2",
-    "react": "^17.0.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "umi": "^3.3.2"
   },
   "devDependencies": {
@@ -50,6 +51,7 @@
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "umi": "^3.3.2",
     "yorkie": "^2.0.0"
   },

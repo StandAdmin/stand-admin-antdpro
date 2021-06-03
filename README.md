@@ -2,12 +2,10 @@
 
 ### Important
 
-Disable Dva model validate in [config/config.ts](https://github.com/rooseve/stand-admin-antdpro-demo/blob/main/config/config.ts), like this:
+Enable Dva in [config/config.ts](https://github.com/rooseve/stand-admin-antdpro-demo/blob/main/config/config.ts), like this:
 
 ```
-dva: {
-   skipModelValidate: true,
-},
+dva: {},
 ```
 
 ### Demos
