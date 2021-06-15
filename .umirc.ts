@@ -1,11 +1,42 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: 'test',
+  title: 'StandAdmin',
+
   favicon:
-    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+    'https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*f4vPTrs3kVwAAAAAAAAAAAAAARQnAQ',
   logo:
-    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+    'https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*f4vPTrs3kVwAAAAAAAAAAAAAARQnAQ',
+
   outputPath: 'docs-dist',
   // more config: https://d.umijs.org/config
+
+  mode: 'site',
+  locales: [
+    //['en-US', 'English'],
+    ['zh-CN', '中文'],
+  ],
+  extraBabelPlugins: [
+    [
+      'import',
+      {
+        libraryName: 'antd',
+        libraryDirectory: 'es',
+        style: 'css',
+      },
+    ],
+  ],
+  navs: {
+    'zh-CN': [
+      null,
+      {
+        title: 'Demo',
+        path: 'https://rooseve.github.io/stand-admin-antdpro-demo',
+      },
+      {
+        title: '讨论区',
+        path: 'https://github.com/rooseve/stand-admin-antdpro-demo/issues',
+      },
+    ],
+  },
 });
