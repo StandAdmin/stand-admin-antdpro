@@ -9,12 +9,12 @@ nav:
 
 ## StandAdmin
 
-StandAdmin 是一个 CRUD 框架，配合 [Bigfish](https://bigfish.antfin-inc.com/) 或者 [AntdPro](https://pro.ant.design/index-cn)，可以非常高效的实现中后台常见的[管理功能](https://rooseve.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/base)。
+StandAdmin 是一个 CRUD 框架，配合 [Bigfish](https://bigfish.antfin-inc.com/) 或者 [AntdPro](https://pro.ant.design/index-cn)，可以非常高效的实现中后台常见的[管理功能](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/base)。
 
 一个典型的 CRUD:
 
 <p>
-  <a href="https://rooseve.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/base">
+  <a href="https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/base">
     <img alt="典型的CRUD" src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*kEKoSpuGPikAAAAAAAAAAAAAARQnAQ" width="500" />
   </a>
 </p>
@@ -35,7 +35,7 @@ StandAdmin 可以省去或者简化这些同质的琐事，辅助开发者聚焦
 - 完美配合 [Bigfish](https://bigfish.antfin-inc.com/) 或者 [AntdPro](https://pro.ant.design/index-cn)
 - 写更少的代码，更简单的代码，同时实现更优的功能效果
 - 尊重中后台的业务复杂性，保证自由度，辅助而不是控制
-- 大量[示例](https://admin-demo.abf.alibaba-inc.com)，推崇模仿
+- 大量[示例](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo)，推崇模仿
 
 ## 思路
 
@@ -65,11 +65,12 @@ StandAdmin 可以省去或者简化这些同质的琐事，辅助开发者聚焦
 
 ### 基本要求
 
-React 16+、Antd 4
+- React 16+
+- Antd 4
 
 ### 新项目
 
-如果是新建一个中后台工程，可以直接使用下述工程模板，改造一个运行正常的代码库远比从头开始容易，对吧~
+如果是新建一个中后台工程，可以直接使用下列模板，改造一个运行正常的代码库远比从头开始容易，对吧~
 
 <table style="width:900px">
   <tr>
@@ -77,15 +78,23 @@ React 16+、Antd 4
       <strong>StandAdmin 模板</strong>
       <div>
         <a href="https://admin-demo.abf.alibaba-inc.com" target="_blank">
-          <img alt="StandAdmin" src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*RjcgTJddV-4AAAAAAAAAAAAAARQnAQ" width="400" />
+          <img alt="StandAdmin" src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*RjcgTJddV-4AAAAAAAAAAAAAARQnAQ" width="250"   />
         </a>
       </div>
     </td>
     <td>
-      <strong>Bigfish 默认模板</strong>
+      <strong>AntdPro（v5）模板</strong>
+      <div>
+        <a href="https://standadmin.github.io/stand-admin-antdpro-demo" target="_blank">
+          <img alt="AntdPro" src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*971wQYL9V0AAAAAAAAAAAAAAARQnAQ"  width="250"  />
+        </a>
+      </div>
+    </td>
+    <td>
+      <strong>Bigfish 模板</strong>
       <div>
         <a href="https://bigfish-admin-demo.abf.alibaba-inc.com" target="_blank">
-          <img alt="Bigfish StandAdmin" src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*VGinTbAIwDAAAAAAAAAAAAAAARQnAQ" width="400" />
+          <img alt="Bigfish" src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*VGinTbAIwDAAAAAAAAAAAAAAARQnAQ" width="250"  />
         </a>
       </div>
     </td>
@@ -105,7 +114,7 @@ React 16+、Antd 4
      dva: {}
      ```
 
-     为避免出现 `export 'connect' (imported as 'connect') was not found in '@alipay/bigfish'` 错误，请手动添加一个[空 model](http://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/models/empty.js) 文件
+     为避免出现 `export 'connect' (imported as 'connect') was not found in '@alipay/bigfish'` 错误，请手动添加一个[空 model](http://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/src/models/empty.js) 文件
 
      ```javascript
      // model/emptyts

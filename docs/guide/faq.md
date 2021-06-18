@@ -24,7 +24,7 @@ StandAdmin 是个代码型的框架，学习曲线接近于左侧的**对数曲�
 
 与之相对，也有很多配置型的方案，比如 SchemaForm，学习曲线更加接近于右侧的**指数曲线**，能配置的时候用配置是非常高效的，不能配置的时候，成本则会指数增长。
 
-非专业前端，或者对 React 不熟悉的同学，可以直接从[示例站点](https://rooseve.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/)入手，改改代码，看看效果（其实大家都是这么学习做事的）。作者曾经接手过一个 angular1 的项目，完全不知道 angular1 是怎么回事儿，也没法学（版本太老了），但是可以从当前存在的代码里看出功能实现的”套路“，然后模仿着去写。
+非专业前端，或者对 React 不熟悉的同学，可以直接从[示例站点](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/)入手，改改代码，看看效果（其实大家都是这么学习做事的）。作者曾经接手过一个 angular1 的项目，完全不知道 angular1 是怎么回事儿，也没法学（版本太老了），但是可以从当前存在的代码里看出功能实现的”套路“，然后模仿着去写。
 
 另外，这张图可以算是一个 CheatSheet
 
@@ -47,8 +47,8 @@ StandAdmin 的提效包含（不限于）两个方面：
 
 - 强化了一些事情，比如：
 
-  - CRUD 整体就是一个组件，可以配置参数支持不同的展示，比如[关联展开](https://rooseve.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/row-expand)
-  - [选取控件](https://admin-demo.abf.alibaba-inc.com/admin-demo/select-ctrl)和[CRUD](https://admin-demo.abf.alibaba-inc.com/admin-demo/base)基本是一套代码，只是用了不同的 Hoc（[StandSelectCtrlHoc](/api#standselectctrlhoc)、[StandContextHoc](/api#standcontexthoc)） 封装而已。
+  - CRUD 整体就是一个组件，可以配置参数支持不同的展示，比如[关联展开](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/row-expand)
+  - [选取控件](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/select-ctrl)和[CRUD](https://admin-demo.abf.alibaba-inc.com/admin-demo/base)基本是一套代码，只是用了不同的 Hoc（[StandSelectCtrlHoc](/api#standselectctrlhoc)、[StandContextHoc](/api#standcontexthoc)） 封装而已。
   - 查询功能支持 URL 参数同步，避免页面刷新后查询项丢失
 
 ## 非 Umi 体系是否适用
@@ -57,8 +57,11 @@ StandAdmin 的重点依赖其实是 [Dva](https://dvajs.com/guide/concepts.html)
 
 ## 选择对应的 npm 包
 
-- [@ali/stand-admin](https://npm.alibaba-inc.com/package/@ali/stand-admin)，适用于 [Bigfish](https://bigfish.antfin-inc.com/)
+- [@ali/stand-admin](https://npm.alibaba-inc.com/package/@ali/stand-admin)，适用于 [Bigfish](https://bigfish.antfin-inc.com/)。
+  - [Demo1](https://admin-demo.abf.alibaba-inc.com)
+  - [Demo2](https://bigfish-admin-demo.abf.alibaba-inc.com)
 - [stand-admin-antdpro](https://www.npmjs.com/package/stand-admin-antdpro)，适用于 [AntdPro](https://pro.ant.design/index-cn)
+  - [Demo](https://standadmin.github.io/stand-admin-antdpro-demo)
 - [stand-admin-dva](https://www.npmjs.com/package/stand-admin-dva)，适用于[其他体系](/guide#stand-admin-dva)
 
 上述 npm 包主要是根据环境做一些适配性的工作，底层都是[stand-admin-base](https://www.npmjs.com/package/stand-admin-base)，[用法](/api) 上没有区别。
@@ -71,7 +74,7 @@ StandAdmin 针对通用意义上的 CRUD 场景，重心是逻辑而不是 UI（
 
 ## 类组件怎么使用 useStandXXXXX 的能力
 
-类组件获取[StandContext](/api#standcontext)可以参见[这里](http://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/Demos/ContextAPI/ClassComp.js)
+类组件获取[StandContext](/api#standcontext)可以参见[这里](http://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/src/pages/Demos/ContextAPI/ClassComp.js)
 
 在类组件里使用 Hooks 的能力可以通过中转的方式进行，以`useStandSearchForm`为例：
 

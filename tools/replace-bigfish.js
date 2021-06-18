@@ -3,11 +3,11 @@ const replace = require('replace-in-file');
 
 const replaceMap = {
   'admin-demo.abf.alibaba-inc.com':
-    'rooseve.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo',
+    'standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo',
   'gitlab.alibaba-inc.com/yk-open/stand-admin-demo/tree/daily/9999.0.1/':
-    'github.com/rooseve/stand-admin-antdpro-demo/tree/main/',
+    'github.com/StandAdmin/stand-admin-antdpro-demo/tree/main/',
   'gitlab.alibaba-inc.com/yk-open/stand-admin-demo/blob/daily/9999.0.1/':
-    'github.com/rooseve/stand-admin-antdpro-demo/blob/main/',
+    'github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/',
 };
 
 const options = {

@@ -58,7 +58,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rooseve/stand-admin-antdpro.git"
+    "url": "git+https://github.com/StandAdmin/stand-admin-antdpro.git"
   },
   "keywords": [
     "antd",
@@ -68,7 +68,7 @@
   "author": "Andrew Zhang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rooseve/stand-admin-antdpro/issues"
+    "url": "https://github.com/StandAdmin/stand-admin-antdpro/issues"
   },
-  "homepage": "https://github.com/rooseve/stand-admin-antdpro#readme"
+  "homepage": "https://github.com/StandAdmin/stand-admin-antdpro#readme"
 }

@@ -4,6 +4,16 @@ order: 3
 toc: menu
 ---
 
+## 提示文案
+
+StandAdmin 会根据配置信息拼接一些显示内容，比如：
+
+|                                      | 文案来源                                                            | 效果示例                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------------ | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 新增、编辑、删除成功提示、弹窗 title | `recordModel`中配置的`StoreNsTitle`、`nameFieldName`、`idFieldName` | <img src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*3vCxRrYitNcAAAAAAAAAAAAAARQnAQ" /><br/><img src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*k7NwSIuMZq0AAAAAAAAAAAAAARQnAQ" /><br/><img src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*2JA3RLftzCkAAAAAAAAAAAAAARQnAQ" /><br/><img src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*rKS8QrcTqpQAAAAAAAAAAAAAARQnAQ"/><img src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*0GY8S4mAyv8AAAAAAAAAAAAAARQnAQ"/> |
+| `callService`成功提示                | `callService`传入的`serviceTitle`参数                               | <img src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*ZHJFTIgwylQAAAAAAAAAAAAAARQnAQ" />                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 请求出错提示                         | 失败请求（`success:false`）返回的 `message` 字段                    | <img src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*6J-kQpJ86XsAAAAAAAAAAAAAARQnAQ" />                                                                                                                                                                                                                                                                                                                                                                                                                          |
+
 <a id="statemanagement"></a>
 
 ## 状态管理
@@ -14,7 +24,7 @@ StandAdmin 内部使用[Dva](https://dvajs.com/guide/concepts.html)做状态管�
 
 简单来说，存在一个全局的 `state` 对象，`StoreNs`就是访问这个 `state` 的 key，而 value 就是[`context.storeRef`](/api#IStoreRef)。
 
-状态改变通过 context 中的 [API](https://rooseve.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/big-context) 进行，比如调用`context.goSearch(params)`会触发`storeRef`中的`records`、`searchParams`发生变化，进而触发 re-render，整体上是一种[受控模式](https://reactjs.org/docs/forms.html#controlled-components)。
+状态改变通过 context 中的 [API](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/big-context) 进行，比如调用`context.goSearch(params)`会触发`storeRef`中的`records`、`searchParams`发生变化，进而触发 re-render，整体上是一种[受控模式](https://reactjs.org/docs/forms.html#controlled-components)。
 
 ### 全局 `state` 的优劣
 
@@ -37,7 +47,7 @@ const AdminComp = StandContextHoc({ recordModel })(MainComp);
 
 但也有个明显的缺点：
 
-- 共用一个`StoreNs`的多个组件实例会[相互影响](https://rooseve.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/same-ns)（毕竟都是受同一份状态数据的控制），很多场景下这并不是期望结果。
+- 共用一个`StoreNs`的多个组件实例会[相互影响](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/same-ns)（毕竟都是受同一份状态数据的控制），很多场景下这并不是期望结果。
 
 <a id="cloneModelPkg"></a>
 
@@ -61,7 +71,7 @@ const render = () => (
 
 **<font color="green">正确</font>做法，利用`makeRecordModelPkgDynamic`创建不同的组件**
 
-[示例](https://admin-demo.abf.alibaba-inc.com/admin-demo/multi-ns)，[代码](http://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/Demos/MultiNs/index.js)
+[示例](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/multi-ns)，[代码](http://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/src/pages/Demos/MultiNs/index.js)
 
 ```jsx | pure
 const DynamicCompCache = {};
@@ -92,7 +102,9 @@ const render = () => (
 
 ## 查询参数
 
-### 查询参数的来源
+### 参数构建
+
+查询参数有几个来源：
 
 - defaultSearchParams，默认的查询参数，通过[defineContextHocParams](/api#definecontexthocparams)或者组件的 [prop](/api#standcontexthoc) 设置。
 - activeSearchParams，当前查询参数，来自查询 Form 或者 Url（[`syncParamsToUrl`](/api#definecontexthocparams) 开启）
@@ -104,9 +116,9 @@ const render = () => (
 
 [`syncParamsToUrl`](/api#definecontexthocparams) 开启后：
 
-- 点击查询（调用`context.goSearch`）会把最终获得的 searchParams 编码（[`stringifyQueryParams`](/api#standutils)）后 push 到 url 上去
+- 查询（调用`context.goSearch`）功能会把计算出的参数编码（[`stringifyQueryParams`](/api#standutils)）后 push 到 url 上去
 
-  > `stringifyQueryParams`会试图保持字段类型（支持 moment 格式），比如
+  > `stringifyQueryParams`是 StandAdmin 的内置实现，可以保持字段类型（支持 moment 格式），比如
   >
   > ```javascript | pure
   > { a: 1, b: 'str', c: { d: moment() }
@@ -117,11 +129,53 @@ const render = () => (
 
 ### 参数转换
 
-查询表单值和接口参数常常不一致。比如日期，表单值通常是 moment 类型，接口参数往往是 string 类型；另外还有些复杂的场景，查询表单和接口参数差异巨大，查询表单的一个 switch 切换可能对应着接口的一批参数。
+查询表单值和接口参数常常不一致。比如日期，表单值通常是 `moment` 类型，接口参数往往是 `string` 类型；另外还有些复杂的场景，查询表单和接口参数差异巨大，查询表单的一个 switch 切换可能对应着接口的一批参数。
 
 做参数转换有两个位置可供选择：
 
-- 在[`searchRecords`](/api#buildstandrecordmodelpkg)处做[单向转换](https://admin-demo.abf.alibaba-inc.com/admin-demo/weird-query)一个单向转换，适用于转换逻辑偏**复杂**的场景。
+- 在[`searchRecords`](/api#buildstandrecordmodelpkg)处做[单向转换](https://admin-demo.abf.alibaba-inc.com/admin-demo/weird-query)，适用于转换逻辑偏**复杂**的场景。
 - 在查询表单中利用[useStandSearchForm](/api#usestandsearchform)中做[双向转换](https://admin-demo.abf.alibaba-inc.com/admin-demo/data-convert-search)，适用于转换逻辑偏**简单**的场景。
 
-###
+<a name="FormHistroy"></a>
+
+## 表单草稿
+
+StandAdmin 内置实现了一个表单草稿功能，UI 效果如下：
+
+<img src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*Gc1uT59vyOMAAAAAAAAAAAAAARQnAQ"/>
+<img src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*GmHdRZOB2QAAAAAAAAAAAAAAARQnAQ"/>
+
+### 调用方法
+
+`useStandUpsertForm`、`useStandSearchForm`返回了一个函数：`renderFormHistroyTrigger`，直接调用后即可输出草稿功能的 UI
+
+```jsx | pure
+export default props => {
+  const {
+    formProps,
+    modalProps,
+    renderFormHistroyTrigger, // 表单草稿的render方法
+  } = useStandUpsertForm({
+    ...getOptsForStandUpsertForm(props),
+  });
+
+  return (
+    <Modal
+      // forceRender
+      {...modalProps}
+    >
+      <div style={{ float: 'right' }}>
+        {/* 输出草稿功能的UI */}
+        {renderFormHistroyTrigger()}
+      </div>
+      <Form {...formProps}>{/* 表单内容*/}</Form>
+    </Modal>
+  );
+};
+```
+
+### 存储位置
+
+表单草稿的 CRUD 接口使用 [localforage](https://www.npmjs.com/package/localforage) 实现，默认存储在在浏览器本地的 IndexedDB 中
+
+<img src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*HMYtSqp0EywAAAAAAAAAAAAAARQnAQ" />

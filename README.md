@@ -2,7 +2,7 @@
 
 ### Important
 
-Enable Dva in [config/config.ts](https://github.com/rooseve/stand-admin-antdpro-demo/blob/main/config/config.ts), like this:
+Enable Dva in [config/config.ts](https://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/config/config.ts), like this:
 
 ```
 dva: {},
@@ -10,6 +10,6 @@ dva: {},
 
 ### Demos
 
-[Antd Pro Demos](https://github.com/rooseve/stand-admin-antdpro-demo)
+[Antd Pro Demos](https://github.com/StandAdmin/stand-admin-antdpro-demo)
 
 Just download and play!

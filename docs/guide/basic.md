@@ -7,14 +7,14 @@ toc: menu
 ## 一个典型的 CRUD
 
 <p>
-  <a href="https://rooseve.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/base">
+  <a href="https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/base">
     <img alt="典型的CRUD" src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*kEKoSpuGPikAAAAAAAAAAAAAARQnAQ" width="800" />
   </a>
 </p>
 
 ## 完整代码
 
-[见这里](http://github.com/rooseve/stand-admin-antdpro-demo/tree/main/src/pages/Demos/BaseDemo)
+[见这里](http://github.com/StandAdmin/stand-admin-antdpro-demo/tree/main/src/pages/Demos/BaseDemo)
 
 ## 重点说明
 
@@ -73,7 +73,7 @@ toc: menu
 
 ### 主入口
 
-[代码](http://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/Demos/BaseDemo/main.js)
+[代码](http://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/src/pages/Demos/BaseDemo/main.js)
 
 #### Import
 
@@ -162,7 +162,7 @@ const recordModel = buildStandRecordModelPkg({
 
 StandContextHoc 是 StandAdmin 的核心，[HOC](https://reactjs.org/docs/higher-order-components.html)有两方面的作用：
 
-1. 对内给包裹的组件 MainComp 提供 [StandContext](https://rooseve.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/big-context)，内含大量的 API，辅助各类功能（查询、列表、新建/编辑）的实现
+1. 对内给包裹的组件 MainComp 提供 [StandContext](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/big-context)，内含大量的 API，辅助各类功能（查询、列表、新建/编辑）的实现
 
 2. 对外提供一个新的高阶组件 AdminComp，该组件支持定制参数，从而可以方便的将整个 CRUD 管理功能嵌入不同的地方
 
@@ -187,7 +187,7 @@ const AdminComp = StandContextHoc(hocParams)(MainComp);
 
 ### 查询表单
 
-[代码](http://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/Demos/BaseDemo/SearchForm/index.js)
+[代码](http://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/src/pages/Demos/BaseDemo/SearchForm/index.js)
 
 #### useStandSearchForm
 
@@ -227,7 +227,7 @@ useStandSearchForm 是专门辅助查询功能的 Hooks
 
 ### 列表
 
-[代码](http://gitlab.alibaba-inc.com/yk-open/stand-admin-demo/blob/daily/9999.0.1/src/pages/Demos/BaseDemo/List/index.js)
+[代码](http://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/src/pages/Demos/BaseDemo/List/index.js)
 
 #### useStandTableList
 

@@ -118,11 +118,11 @@ const hocParams = defineContextHocParams({
 | recordModel                 | buildStandRecordModelPkg 的返回                                                                                                                                                                                                                                      | -                             | -                                                                        | -    |
 | defaultSearchParams         | 默认的查询请求参数（也是查询表单的默认值）                                                                                                                                                                                                                           | `object \| (props) => object` | -                                                                        | -    |
 | specSearchParams            | 强制指定的查询请求参数，默认实现中查询表单里对应的 FormItem 会被禁用                                                                                                                                                                                                 | `object \| (props) => object` | -                                                                        | -    |
-| syncParamsToUrl             | 同步查询参数到 Url，这样页面刷新后可复原查询条件；取值`'auto'`时，会检测组件接收的 props 里面是否有 `histroy.location`（Umi 体系下 [route](http://github.com/rooseve/stand-admin-antdpro-demo/blob/main/config/router.config.js) 对应的组件会接收到），存在则开启    | `'auto' \| boolean`           | `auto`                                                                   | -    |
+| syncParamsToUrl             | 同步查询参数到 Url，这样页面刷新后可复原查询条件；取值`'auto'`时，会检测组件接收的 props 里面是否有 `histroy.location`（Umi 体系下 [route](http://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/config/router.config.js) 对应的组件会接收到），存在则开启 | `'auto' \| boolean`           | `auto`                                                                   | -    |
 | reservedUrlParamNames       | 同步查询参数到 Url 时，当前 Url 中需要被保留下来的参数                                                                                                                                                                                                               | `string[]`                    | -                                                                        | -    |
-| urlParamsNs                 | 将查询参数编码到单一 get 参数中；如页面存在[多个实例](https://rooseve.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/multi-ns)并同时启用 syncParamsToUrl，可借此实现 get 参数隔离                                                          | -                             | -                                                                        | -    |
-| sorterSearchParams          | 由列表（Table）的列排序触发，[示例](http://github.com/rooseve/stand-admin-antdpro-demo/tree/main/src/pages/Demos/ColumnSort)                                                                                                                                         | `(sorter, props) => object`   | -                                                                        | -    |
-| filterSearchParams          | 由列表（Table）的列筛选触发，[示例](http://github.com/rooseve/stand-admin-antdpro-demo/tree/main/src/pages/Demos/ColumnFilter)                                                                                                                                       | `(filters, props) => object`  | -                                                                        | -    |
+| urlParamsNs                 | 将查询参数编码到单一 get 参数中；如页面存在[多个实例](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/multi-ns)并同时启用 syncParamsToUrl，可借此实现 get 参数隔离                                                       | -                             | -                                                                        | -    |
+| sorterSearchParams          | 由列表（Table）的列排序触发，[示例](http://github.com/StandAdmin/stand-admin-antdpro-demo/tree/main/src/pages/Demos/ColumnSort)                                                                                                                                      | `(sorter, props) => object`   | -                                                                        | -    |
+| filterSearchParams          | 由列表（Table）的列筛选触发，[示例](http://github.com/StandAdmin/stand-admin-antdpro-demo/tree/main/src/pages/Demos/ColumnFilter)                                                                                                                                    | `(filters, props) => object`  | -                                                                        | -    |
 | searchRecordsOnMount        | didMount 时是否触发查询                                                                                                                                                                                                                                              | `boolean`                     | `true`                                                                   | -    |
 | searchRecordsOnParamsChange | [查询参数](/guide/advanced#searchParams) 变化时是否触发查询                                                                                                                                                                                                          | `boolean`                     | `true`                                                                   | -    |
 | listRowSelectionSupport     | 列表（Table）是否开启列选择                                                                                                                                                                                                                                          | `boolean`                     | `false`                                                                  | -    |
@@ -156,7 +156,7 @@ AdminComp 支持的 props（checked 相关的参数通常配合 listRowSelection
 
 ## StandSelectCtrlHoc
 
-> HOC 函数，参数与 StandContextHoc 基本一致，但返回的是一个数据对象[选择组件](https://rooseve.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/select-ctrl)（通常用于 Form 中）；直观理解，就是把整套 CRUD 嵌在一个 Modal 中，同时开启 listRowSelectionSupport
+> HOC 函数，参数与 StandContextHoc 基本一致，但返回的是一个数据对象[选择组件](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/select-ctrl)（通常用于 Form 中）；直观理解，就是把整套 CRUD 嵌在一个 Modal 中，同时开启 listRowSelectionSupport
 
 示例：
 
@@ -289,7 +289,7 @@ function MainComp(props) {
 
 <a id="StandContext"></a>
 
-[示例代码](http://github.com/rooseve/stand-admin-antdpro-demo/blob/main/src/pages/Demos/ContextAPI/APIDemo/index.js)
+[示例代码](http://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/src/pages/Demos/ContextAPI/APIDemo/index.js)
 
 | 属性                   | 说明                                                                                                                                                                   | 类型                                                                                                                      |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -306,7 +306,7 @@ function MainComp(props) {
 | addRecord              | 添加数据对象，调用 `recordModel.addRecord`                                                                                                                             | `(record) => Promise<IResponseOfAction>`                                                                                  | - |
 | updateRecord           | 更新数据对象，调用 `recordModel.updateRecord`                                                                                                                          | `(record) => Promise<IResponseOfAction>`                                                                                  | - |
 | deleteRecord           | 删除数据对象，调用 `recordModel.deleteRecord`                                                                                                                          | `(params?: object) => Promise<IResponseOfAction>`                                                                         | - |
-| callService            | 调用服务（通常就是接口请求），[示例](http://gitlab.alibaba-inc.com/yk-open/stand-admin-demo/blob/daily/9999.0.1/src/pages/Demos/RowAction/List/index.js)               | `(params: IServiceParams) => Promise<IResponse>;` [IServiceParams 定义](#IServiceParams)                                  | - |
+| callService            | 调用服务（通常就是接口请求），[示例](http://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/src/pages/Demos/RowAction/List/index.js)                          | `(params: IServiceParams) => Promise<IResponse>;` [IServiceParams 定义](#IServiceParams)                                  | - |
 | getRecord              | 获取单条数据对象，调用 `recordModel.getRecord`或者`recordModel.searchRecords`                                                                                          | `(params?: object) => Promise<IRecord>`                                                                                   | - |
 | getRecordId            | 返回数据对象的 ID，即`record[idFieldName]`                                                                                                                             | `(record) => id`                                                                                                          | - |
 | getRecordName          | 返回数据对象的 name，即`record[nameFieldName]`                                                                                                                         | `(record) => name`                                                                                                        | - |
@@ -422,7 +422,7 @@ useStandSearchForm 的返回：
 | config                   | 配置信息，即`context.config`                                                                                              | `object`                | - |
 | context                  | [StandContext](#StandContext)                                                                                             | `StandContext`          | - |
 | FormItem                 | [Form.FormItem](https://ant.design/components/form-cn/#Form.Item)的简单封装，支持通过 `disabledSearchParams` 设定禁用状态 | `string[]`              | - |
-| renderFormHistroyTrigger | [表单草稿记录](#FormHistroy)功能                                                                                          | `() => React.ReactNode` | - |
+| renderFormHistroyTrigger | [表单草稿](/guide/advanced#FormHistroy)功能                                                                               | `() => React.ReactNode` | - |
 
 ## useStandTableList
 
@@ -570,11 +570,11 @@ useStandUpsertForm 的返回：
 | config                   | 配置信息，即`context.config`                                                                                                        | `object`                     | - |
 | context                  | [StandContext](#StandContext)                                                                                                       | `StandContext`               | - |
 | recordFormVisibleTag     | 编辑弹窗显隐标识，由 showRecordForm 设定                                                                                            | `string \| number \| object` | - |
-| renderFormHistroyTrigger | [表单草稿记录](#FormHistroy)功能                                                                                                    | `() => React.ReactNode`      | - |
+| renderFormHistroyTrigger | [表单草稿](/guide/advanced#FormHistroy)功能                                                                                         | `() => React.ReactNode`      | - |
 
 ## cloneModelPkg
 
-> `recordModel.StoreNs`是全局唯一的，多个组件实例共享同一个 recordModel 时会[相互影响](https://admin-demo.abf.alibaba-inc.com/admin-demo/same-ns)，借助 `cloneModelPkg` 可以“克隆”出一个具备新的 `StoreNs` 的副本，从而实现状态空间的隔离
+> `recordModel.StoreNs`是全局唯一的，多个组件实例共享同一个 recordModel 时会[相互影响](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/same-ns)，借助 `cloneModelPkg` 可以“克隆”出一个具备新的 `StoreNs` 的副本，从而实现状态空间的隔离
 
 示例：
 
