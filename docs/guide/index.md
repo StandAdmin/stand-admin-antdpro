@@ -36,6 +36,7 @@ StandAdmin 可以省去或者简化这些同质的琐事，辅助开发者聚焦
 - 写更少的代码，更简单的代码，同时实现更优的功能效果
 - 尊重中后台的业务复杂性，保证自由度，辅助而不是控制
 - 大量[示例](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo)，推崇模仿
+- 完全[开源](https://github.com/StandAdmin)
 
 ## 思路
 

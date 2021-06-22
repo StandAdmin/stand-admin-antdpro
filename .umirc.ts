@@ -11,6 +11,12 @@ export default defineConfig({
   outputPath: 'docs-dist',
   // more config: https://d.umijs.org/config
 
+  publicPath: './',
+  exportStatic: {
+    htmlSuffix: false,
+    dynamicRoot: true,
+  },
+
   mode: 'site',
   locales: [
     //['en-US', 'English'],
@@ -31,11 +37,11 @@ export default defineConfig({
       null,
       {
         title: 'Demo',
-        path: 'https://rooseve.github.io/stand-admin-antdpro-demo',
+        path: 'https://standadmin.github.io/stand-admin-antdpro-demo',
       },
       {
         title: '讨论区',
-        path: 'https://github.com/rooseve/stand-admin-antdpro-demo/issues',
+        path: 'https://github.com/standadmin/stand-admin-antdpro-demo/issues',
       },
     ],
   },
