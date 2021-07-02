@@ -12,5 +12,5 @@ setConfig({
   },
   getDvaApp: function getDvaApp$1() {
     return getDvaApp();
-  },
+  }
 });
