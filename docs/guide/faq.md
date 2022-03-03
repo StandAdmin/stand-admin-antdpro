@@ -4,7 +4,7 @@ order: 4
 toc: menu
 ---
 
-## StandAdmin 和 Umi（Bigfish/AntdPro） 的关系
+## StandAdmin 和 Umi（AntdPro） 的关系
 
 Umi 是 App 级的脚手架，而 StandAdmin 可以算作 App 下的一个 Lib，专门针对 CRUD 性质的功能。
 
@@ -57,9 +57,6 @@ StandAdmin 的重点依赖其实是 [Dva](https://dvajs.com/guide/concepts.html)
 
 ## 选择对应的 npm 包
 
-- [@ali/stand-admin](https://npm.alibaba-inc.com/package/@ali/stand-admin)，适用于 [Bigfish](https://bigfish.antfin-inc.com/)。
-  - [Demo1](https://admin-demo.abf.alibaba-inc.com)
-  - [Demo2](https://bigfish-admin-demo.abf.alibaba-inc.com)
 - [stand-admin-antdpro](https://www.npmjs.com/package/stand-admin-antdpro)，适用于 [AntdPro](https://pro.ant.design/index-cn)
   - [Demo](https://standadmin.github.io/stand-admin-antdpro-demo)
 - [stand-admin-dva](https://www.npmjs.com/package/stand-admin-dva)，适用于[其他体系](/guide#stand-admin-dva)

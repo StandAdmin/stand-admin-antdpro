@@ -77,8 +77,6 @@ toc: menu
 
 #### Import
 
-> 注：需要根据 [环境](/guide#umi-体系) 选用对应的 npm 包，Bigfish 下对应的是 @ali/stand-admin
-
 ```jsx | pure
 // main.js
 import {
@@ -87,7 +85,7 @@ import {
   defineContextHocParams,
   StandContextHoc,
   // ...
-} from '@ali/stand-admin';
+} from 'stand-admin-antdpro';
 ```
 
 #### buildStandConfigModelPkg

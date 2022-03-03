@@ -3,7 +3,7 @@ title: StandAdmin - 为中后台CRUD而生
 order: 10
 hero:
   title: StandAdmin
-  desc: 为中后台CRUD而生，完美配合 Bigfish / Antd Pro
+  desc: 为中后台CRUD而生，完美配合 [Antd Pro](https://pro.ant.design/)
   actions:
     - text: Demo
       link: https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo

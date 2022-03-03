@@ -9,7 +9,7 @@ nav:
 
 ## StandAdmin
 
-StandAdmin 是一个 CRUD 框架，配合 [Bigfish](https://bigfish.antfin-inc.com/) 或者 [AntdPro](https://pro.ant.design/index-cn)，可以非常高效的实现中后台常见的[管理功能](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/base)。
+StandAdmin 是一个 CRUD 框架，配合[AntdPro](https://pro.ant.design/index-cn)，可以非常高效的实现中后台常见的[管理功能](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo/admin-demo/base)。
 
 一个典型的 CRUD:
 
@@ -32,7 +32,7 @@ StandAdmin 可以省去或者简化这些同质的琐事，辅助开发者聚焦
 
 ## 特性
 
-- 完美配合 [Bigfish](https://bigfish.antfin-inc.com/) 或者 [AntdPro](https://pro.ant.design/index-cn)
+- 完美配合[AntdPro](https://pro.ant.design/index-cn)
 - 写更少的代码，更简单的代码，同时实现更优的功能效果
 - 尊重中后台的业务复杂性，保证自由度，辅助而不是控制
 - 大量[示例](https://standadmin.github.io/stand-admin-antdpro-demo/#/stand-admin-antdpro-demo)，推崇模仿
@@ -73,29 +73,13 @@ StandAdmin 可以省去或者简化这些同质的琐事，辅助开发者聚焦
 
 如果是新建一个中后台工程，可以直接使用下列模板，改造一个运行正常的代码库远比从头开始容易，对吧~
 
-<table style="width:900px">
+<table>
   <tr>
-    <td>
-      <strong>StandAdmin 模板</strong>
-      <div>
-        <a href="https://admin-demo.abf.alibaba-inc.com" target="_blank">
-          <img alt="StandAdmin" src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*RjcgTJddV-4AAAAAAAAAAAAAARQnAQ" width="250"   />
-        </a>
-      </div>
-    </td>
     <td>
       <strong>AntdPro（v5）模板</strong>
       <div>
         <a href="https://standadmin.github.io/stand-admin-antdpro-demo" target="_blank">
-          <img alt="AntdPro" src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*971wQYL9V0AAAAAAAAAAAAAAARQnAQ"  width="250"  />
-        </a>
-      </div>
-    </td>
-    <td>
-      <strong>Bigfish 模板</strong>
-      <div>
-        <a href="https://bigfish-admin-demo.abf.alibaba-inc.com" target="_blank">
-          <img alt="Bigfish" src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*VGinTbAIwDAAAAAAAAAAAAAAARQnAQ" width="250"  />
+          <img alt="AntdPro" src="https://gw.alipayobjects.com/mdn/rms_9ac13c/afts/img/A*971wQYL9V0AAAAAAAAAAAAAAARQnAQ"  width="600"  />
         </a>
       </div>
     </td>
@@ -104,7 +88,7 @@ StandAdmin 可以省去或者简化这些同质的琐事，辅助开发者聚焦
 
 ### Umi 3+ 工程
 
-使用[Bigfish](https://bigfish.antfin-inc.com/)或者[AntdPro](https://pro.ant.design/index-cn)
+使用[AntdPro](https://pro.ant.design/index-cn)
 
 - 使用内置的 Dva
 
@@ -115,7 +99,7 @@ StandAdmin 可以省去或者简化这些同质的琐事，辅助开发者聚焦
      dva: {}
      ```
 
-     为避免出现 `export 'connect' (imported as 'connect') was not found in '@alipay/bigfish'` 错误，请手动添加一个[空 model](http://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/src/models/empty.js) 文件
+     为避免出现 `export 'connect' (imported as 'connect') was not found in umi` 错误，请手动添加一个[空 model](http://github.com/StandAdmin/stand-admin-antdpro-demo/blob/main/src/models/empty.js) 文件
 
      ```javascript
      // model/emptyts
@@ -125,7 +109,7 @@ StandAdmin 可以省去或者简化这些同质的琐事，辅助开发者聚焦
      };
      ```
 
-  2. [Bigfish](https://bigfish.antfin-inc.com/) 下请使用 [@ali/stand-admin](https://npm.alibaba-inc.com/package/@ali/stand-admin) ； [AntdPro](https://pro.ant.design/index-cn) 下请使用 [stand-admin-antdpro](https://www.npmjs.com/package/stand-admin-antdpro) 。 两个 npm 包只是根据不同环境做一些简单的适配，用法完全一致
+  2. [AntdPro](https://pro.ant.design/index-cn) 下请使用 [stand-admin-antdpro](https://www.npmjs.com/package/stand-admin-antdpro) 。
 
 - 不方便开启内置的 Dva
 
@@ -156,7 +140,7 @@ const App = props => {
 
 ```jsx | pure
 // src/app.js
-import React from '@alipay/bigfish/react';
+import React from 'react';
 import { DvaContainer } from 'stand-admin-dva';
 
 export function rootContainer(container) {
